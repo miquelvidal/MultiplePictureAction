@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MkDbAlbum" representedClassName="MkDbAlbum" syncable="YES">
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="seleccionadesImg" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalImg" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="totes" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <relationship name="imatges" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MkDbImg" inverseName="album" inverseEntity="MkDbImg" syncable="YES"/>
+        <relationship name="thumbnail" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="MkDbAlbumThumbnail" inverseName="album" inverseEntity="MkDbAlbumThumbnail" syncable="YES"/>
+    </entity>
+    <entity name="MkDbAlbumThumbnail" representedClassName="MkDbAlbumThumbnail" syncable="YES">
+        <attribute name="imatge" optional="YES" attributeType="Transformable" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <relationship name="album" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="MkDbAlbum" inverseName="thumbnail" inverseEntity="MkDbAlbum" syncable="YES"/>
+    </entity>
+    <entity name="MkDbAssetIn" representedClassName="MkDbAssetIn" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MkDbImg" representedClassName="MkDbImg" syncable="YES">
+        <attribute name="seleccionada" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="album" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="MkDbAlbum" inverseName="imatges" inverseEntity="MkDbAlbum" syncable="YES"/>
+        <relationship name="thumbnail" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="MkDbImgThumbnail" inverseName="imatgeOriginal" inverseEntity="MkDbImgThumbnail" syncable="YES"/>
+    </entity>
+    <entity name="MkDbImgThumbnail" representedClassName="MkDbImgThumbnail" syncable="YES">
+        <attribute name="imatge" optional="YES" attributeType="Transformable" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <relationship name="imatgeOriginal" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="MkDbImg" inverseName="thumbnail" inverseEntity="MkDbImg" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MkDbAlbum" positionX="-1676" positionY="-477" width="128" height="133"/>
+        <element name="MkDbAlbumThumbnail" positionX="-1613" positionY="-253" width="128" height="73"/>
+        <element name="MkDbImg" positionX="-1973" positionY="-468" width="128" height="105"/>
+        <element name="MkDbImgThumbnail" positionX="-2009" positionY="-253" width="128" height="73"/>
+        <element name="MkDbAssetIn" positionX="-1926" positionY="-46" width="128" height="73"/>
+    </elements>
+</model>

@@ -1,0 +1,13 @@
+Multiple Picture Action v1
+- Posar una alerta quan facis refresc --> aquesta tindra idioma
+- Les classes d'acció també tenen idioma.
+- Els missatges de l'esplit en n mails també serà necessari.
+
+OPT
+- Estaria molt bé un menu d'ajuda o quelcom semblant per indicar el que fa
+- També estaria molt bé el text d'ajuda en els diferents 
+
+Multiple Picture Action v2
+- Depurar el seleccionar totes i poder deseleccionar-les, tenir petita memoria en la selecció de fotos.
+- Tenir vista de imatge per veure una en gran
+- Aplicar Filtres des d'una TableView per poder veure com reacciona la majoria.
